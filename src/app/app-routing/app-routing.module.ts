@@ -5,9 +5,8 @@ import { LoginComponent } from '../auth/login/login.component'
 import { RegisterComponent } from '../auth/register/register.component'
 import { ProgressComponent } from '../pages/progress/progress.component'
 import { Grafica1Component } from '../pages/grafica1/grafica1.component'
-import { NotpagefoundComponent } from '../pages/notpagefound/notpagefound.component'
 import { MainDashboardComponent } from '../pages/main-dashboard/main-dashboard.component'
-
+import { PageNotFoundComponent } from '../pages/page-not-found/page-not-found.component'
 const routes: Routes = [
   {
     path: '',
@@ -23,7 +22,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
 
-  { path: '**', component: NotpagefoundComponent }
+  { path: '**', component: PageNotFoundComponent }
 ]
 
 @NgModule({
