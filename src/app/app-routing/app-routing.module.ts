@@ -6,7 +6,11 @@ import { PagesRoutingModule } from '../pages/pages.routing'
 import { AuthRoutingModule } from '../auth/auth.router'
 
 import { PageNotFoundComponent } from '../auth/page-not-found/page-not-found.component'
-const routes: Routes = [{ path: '**', component: PageNotFoundComponent }]
+const routes: Routes = [
+  
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent }
+]
 
 @NgModule({
   imports: [
