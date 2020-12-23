@@ -7,8 +7,6 @@ import { ComponentsModule } from '../components/components.module'
 
 //Componentes
 import { DashboardComponent } from './dashboard/dashboard.component'
-import { ProgressComponent } from './progress/progress.component'
-import { Grafica1Component } from './grafica1/grafica1.component'
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
 import { PagosComponent } from './pagos/pagos.component';
 import { PagoshistoricosComponent } from './pagoshistoricos/pagoshistoricos.component';
@@ -19,8 +17,6 @@ import { ValidacionPagosComponent } from './validacion-pagos/validacion-pagos.co
 @NgModule({
   declarations: [
     DashboardComponent,
-    ProgressComponent,
-    Grafica1Component,
     MainDashboardComponent,
     PagosComponent,
     PagoshistoricosComponent,
@@ -35,8 +31,6 @@ import { ValidacionPagosComponent } from './validacion-pagos/validacion-pagos.co
           ],
   exports: [
     DashboardComponent,
-    ProgressComponent,
-    Grafica1Component,
     MainDashboardComponent,
     PagosComponent,
     PagoshistoricosComponent,
