@@ -6,7 +6,8 @@ import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { PagesModule } from './pages/pages.module'
 import { PageNotFoundComponent } from './auth/page-not-found/page-not-found.component'
-import { AuthModule } from './auth/auth.module'
+import { AuthModule } from './auth/auth.module';
+
 
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent],

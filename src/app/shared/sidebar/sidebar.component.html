@@ -9,26 +9,29 @@
             <ul id="sidebarnav">
                 <li class="user-profile">
                     <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><img
-                            src="assets/images/users/profile.png" alt="user" /><span class="hide-menu">Steave Jobs
+                            src="assets/images/users/profile.png" alt="user" /><span class="hide-menu">Luis Eduardo Diaz
                         </span></a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="javascript:void()">My Profile </a></li>
-                        <li><a href="javascript:void()">My Balance</a></li>
-                        <li><a href="javascript:void()">Inbox</a></li>
-                        <li><a href="javascript:void()">Account Setting</a></li>
-                        <li><a href="javascript:void()">Logout</a></li>
+                        <li><a routerLink="/login">Salir</a></li>
                     </ul>
                 </li>
                 <li class="nav-devider"></li>
                 <li class="nav-small-cap">PERSONAL</li>
                 <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
-                            class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard <span
-                                class="label label-rouded label-themecolor pull-right">4</span></span></a>
+                            class="mdi mdi-gauge"></i><span class="hide-menu">Residentes<span
+                                class="label label-rouded label-themecolor pull-right">3</span></span></a>
                     <ul aria-expanded="false" class="collapse">
-                        <li><a href="index.html">Minimal </a></li>
-                        <li><a href="index2.html">Analytical</a></li>
-                        <li><a href="index3.html">Demographical</a></li>
-                        <li><a href="index4.html">Modern</a></li>
+                        <li><a routerLink="/dashboard/pagos">Pagos</a></li>
+                        <li><a routerLink="/dashboard/pagos-historicos">Pagos Historicos</a></li>
+                        <li><a routerLink="/dashboard/pazysalvo">Paz y salvo</a></li>
+                    </ul>
+                </li>
+
+                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
+                            class="mdi mdi-gauge"></i><span class="hide-menu">Empleados<span
+                                class="label label-rouded label-themecolor pull-right">1</span></span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a routerLink="/dashboard/validacion-pagos">Validacion de Pagos</a></li>
                     </ul>
                 </li>
             </ul>

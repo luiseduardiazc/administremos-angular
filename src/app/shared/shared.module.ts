@@ -4,6 +4,7 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component'
 import { FooterComponent } from './footer/footer.component'
 import { HeaderComponent } from './header/header.component'
 import { SidebarComponent } from './sidebar/sidebar.component'
+import { RouterModule } from '@angular/router'
 
 @NgModule({
   declarations: [
@@ -12,7 +13,10 @@ import { SidebarComponent } from './sidebar/sidebar.component'
     HeaderComponent,
     SidebarComponent
   ],
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    RouterModule
+  ],
   exports: [
     BreadcrumbsComponent,
     FooterComponent,
