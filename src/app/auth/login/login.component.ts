@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
   ngOnInit (): void {}
 
   login() {
-   // this.authService.login1()
     this.authService.login( this.loginForm.value )
       .subscribe( resp => {
         // Navegar al Dashboard
