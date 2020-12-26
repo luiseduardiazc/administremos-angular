@@ -1,1 +1,107 @@
-<p>pagos works!</p>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                    <!-- Checkbox Column -->
+                    <ng-container matColumnDef="select">
+                        <th mat-header-cell *matHeaderCellDef>
+                            Check
+                        </th>
+                        <td mat-cell *matCellDef="let row; let idx = index">
+                            <mat-checkbox (click)="$event.stopPropagation()"
+                                (change)="$event ? actualizarCheckedList(row, idx) : null" [checked]="selection.isSelected(row)">
+                            </mat-checkbox>
+                        </td>
+                    </ng-container>
+
+                    <!-- Id Factura  Column -->
+                    <ng-container matColumnDef="idFactura">
+                        <th mat-header-cell *matHeaderCellDef> Id Factura</th>
+                        <td mat-cell *matCellDef="let element"> {{element.idFactura}} </td>
+                    </ng-container>
+
+                    <!-- Fecha mes  Column -->
+                    <ng-container matColumnDef="fecMesFactura">
+                        <th mat-header-cell *matHeaderCellDef>Factura Mes</th>
+                        <td mat-cell *matCellDef="let element"> {{element.fecMesFactura | date: 'MM/yyyy'}} </td>
+                    </ng-container>
+
+                    <!-- Residente Column -->
+                    <ng-container matColumnDef="nombreresidente">
+                        <th mat-header-cell *matHeaderCellDef> Residente</th>
+                        <td mat-cell *matCellDef="let element"> {{element.nombreresidente}} </td>
+                    </ng-container>
+
+                    <!-- Documento Column -->
+                    <ng-container matColumnDef="documentoResidente">
+                        <th mat-header-cell *matHeaderCellDef> Documento</th>
+                        <td mat-cell *matCellDef="let element"> {{element.documentoResidente}} </td>
+                    </ng-container>
+
+                    <!-- Estado Column -->
+                    <ng-container matColumnDef="estado">
+                        <th mat-header-cell *matHeaderCellDef>Estado</th>
+                        <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+                    </ng-container>
+
+
+                    <!-- Valor Admin Column -->
+                    <ng-container matColumnDef="valAdministracion">
+                        <th mat-header-cell *matHeaderCellDef> Administracion</th>
+                        <td mat-cell *matCellDef="let element"> {{element.valAdministracion}} </td>
+                    </ng-container>
+
+                    <!-- Cuota Extra Column -->
+                    <ng-container matColumnDef="cuotaExtra">
+                        <th mat-header-cell *matHeaderCellDef>Cuota Extra</th>
+                        <td mat-cell *matCellDef="let element"> {{element.cuotaExtra}} </td>
+                    </ng-container>
+
+                    <!-- factura descuento Column -->
+                    <ng-container matColumnDef="facDescuento">
+                        <th mat-header-cell *matHeaderCellDef>Descuento</th>
+                        <td mat-cell *matCellDef="let element"> {{element.facDescuento}}%</td>
+                    </ng-container>
+
+                    <!-- factura recargo Column -->
+                    <ng-container matColumnDef="facRecargo">
+                        <th mat-header-cell *matHeaderCellDef>Recargo</th>
+                        <td mat-cell *matCellDef="let element"> {{element.facRecargo}}%</td>
+                    </ng-container>
+
+                    <!-- Total Column -->
+                    <ng-container matColumnDef="total">
+                        <th mat-header-cell *matHeaderCellDef>Total</th>
+                        <td mat-cell *matCellDef="let element"> {{element.total}} </td>
+                    </ng-container>
+
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+            </div>
+
+            <!--- Make Payment --->
+            <form autocomplete="off" id="pagoForm" *ngIf="selection.selected?.length > 0">
+
+                <div class="form-group col-sm-12 col-md-12 col-lg-6">
+                    <label for="file">Seleccione su consignacion (.pdf .jpeg .jpg)</label>
+
+                    <input type="file" class="form-control" id="file" accept=".pdf, .jpeg, .jpg"
+                        (change)="manejadorArchivoInput($event.target.files)">
+                </div>
+                <div class="form-group">
+                    <button type="button"
+                    [ngClass]="{'btn': true, 'btn-info':true, 'disabled': fileToUpload == null}"
+                    [disabled]="fileToUpload == null"
+                    (click)="generarPago()"
+                    >Pagar</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

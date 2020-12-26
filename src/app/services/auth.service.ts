@@ -20,11 +20,7 @@ export class AuthService {
 
    login( formData: LoginForm ) {
 
-    const httpHeaders: HttpHeaders = new HttpHeaders({
-      Anonymous: ''
-  });
-
-    return this.http.post(`${ base_url }/usuario/login`, formData, { headers: httpHeaders } )
+    return this.http.post(`${ base_url }/usuario/login`, formData)
     .pipe(
       tap( (resp: any) => {
         localStorage.setItem('token', resp.token )

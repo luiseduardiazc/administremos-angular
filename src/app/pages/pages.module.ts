@@ -12,7 +12,11 @@ import { PagosComponent } from './pagos/pagos.component';
 import { PagoshistoricosComponent } from './pagoshistoricos/pagoshistoricos.component';
 import { PazysalvoComponent } from './pazysalvo/pazysalvo.component';
 import { ValidacionPagosComponent } from './validacion-pagos/validacion-pagos.component'
-
+import {MatTableModule} from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button'
+import { MatPaginatorModule } from '@angular/material/paginator'
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -25,9 +29,14 @@ import { ValidacionPagosComponent } from './validacion-pagos/validacion-pagos.co
   ],
   imports: [
             CommonModule,
+            FormsModule,
             SharedModule,
             RouterModule,
-            ComponentsModule
+            ComponentsModule,
+            MatTableModule,
+            MatPaginatorModule,
+            MatButtonModule,
+            MatCheckboxModule
           ],
   exports: [
     DashboardComponent,
