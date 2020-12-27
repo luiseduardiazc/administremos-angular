@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
 import { LoginForm } from '../interfaces/login-form.interface';
 import { catchError, map, tap} from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
-
+import jwt_decode from "jwt-decode";
 
 const base_url = environment.base_url;
 
@@ -38,5 +38,10 @@ export class AuthService {
 
    logout() {
      localStorage.removeItem('token');
+   }
+
+   getUserInfo() {
+     const user = jwt_decode(localStorage.getItem('token'))
+     return user; 
    }
 }

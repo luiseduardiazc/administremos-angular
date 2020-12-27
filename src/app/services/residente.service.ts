@@ -45,4 +45,8 @@ export class ResidenteService {
     return this.http.get<PagosHistoricoResidente>(`${ base_url }/pagos/residente`, {params: httpParams});
   }
 
+  comprobarPazySalvo() : Observable<Boolean> {
+    return this.http.get<Boolean>(`${ base_url }/factura/pazysalvo`)
+  }
+  
 }

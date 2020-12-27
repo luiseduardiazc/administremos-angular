@@ -1,1 +1,21 @@
-<p>pazysalvo works!</p>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-4 text-right" *ngIf="!pazysalvo">
+                    <button class="btn btn-info btn-block" (click)="comprobarPazySalvo()">Generar Paz y Salvo </button>
+                </div>
+                <div class="col-md-8 mt-5" id="htmlData" #htmlData *ngIf="pazysalvo">
+                   <h1>ADMINISTREMOS</h1>
+                   <SPan>Certifica que: </SPan>
+                   <div>
+                       <p>El Señor(a) <strong>{{user.nombre}} {{user.apellido}}</strong> se encuentra a <strong>PAZ y SALVO</strong> por todo concepto con la compañia.</p>
+                       <p>La presente se expide a los <strong>{{ currentDate | date: 'dd'}}</strong>  dias  del mes <strong>{{currentDate | date: 'MM'}}</strong> del Año <strong>{{currentDate | date: 'yyyy'}}.</strong></p>
+                   </div>
+                </div>
+                <div class="col-md-4 text-right" *ngIf="pazysalvo">
+                    <button class="btn btn-danger btn-block" (click)="downloadPDF()">Descargar</button>
+                 </div>
+            </div>
+        </div>
+</div>
