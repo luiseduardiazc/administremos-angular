@@ -87,6 +87,7 @@ export class ValidacionPagosComponent implements OnInit {
         this.eliminarFilaDatasource(idx)
       },
       err => {
+        this.error()
         console.error(err)
       }
     )
@@ -99,6 +100,7 @@ export class ValidacionPagosComponent implements OnInit {
         this.eliminarFilaDatasource(idx)
       },
       err => {
+        this.error()
         console.error(err)
       }
     )
@@ -107,5 +109,15 @@ export class ValidacionPagosComponent implements OnInit {
   eliminarFilaDatasource (idx: Number) {
     this.dataSource.data.splice(idx.valueOf(), 1)
     this.dataSource.data = [...this.dataSource.data]
+  }
+
+
+  error() {
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Algo Salio mal!',
+      footer: ''
+    })
   }
 }

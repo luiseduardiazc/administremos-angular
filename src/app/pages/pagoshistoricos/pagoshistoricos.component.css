@@ -1,0 +1,12 @@
+table {
+    width: 100%;
+    font-size: 20em;
+  }
+
+  .mat-header-cell {
+    font-size: 16px;
+  }
+
+  :host ::ng-deep .mat-form-field-wrapper{
+    padding-bottom: 1em;
+  }
