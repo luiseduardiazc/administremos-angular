@@ -17,8 +17,6 @@ export class ResidenteService {
     return this.http.get<Factura[]>(`${ base_url }/factura/residente`)
   }
 
-
-  
   generarPago (selected: Factura[], fileToUpload: File) : Observable<any> {
     const formData = new FormData();
     const valorNeto: Number = selected[0].valAdministracion.valueOf() + selected[0].cuotaExtra.valueOf(); 
@@ -35,6 +33,4 @@ export class ResidenteService {
     return this.http.post(`${ base_url }/pagos/residente`, formData)
   }
 
-
 }
-

@@ -90,13 +90,12 @@
                 <div class="form-group col-sm-12 col-md-12 col-lg-6">
                     <label for="file">Seleccione su consignacion (.pdf .jpeg .jpg)</label>
 
-                    <input type="file" class="form-control" id="file" accept=".pdf, .jpeg, .jpg"
+                    <input type="file" #userFile name="userFile" class="form-control" id="file" accept=".pdf, .jpeg, .jpg"
                         (change)="manejadorArchivoInput($event.target.files)">
                 </div>
-                <div class="form-group">
+                <div class="form-group" *ngIf="fileToUpload !== null">
                     <button type="button"
-                    [ngClass]="{'btn': true, 'btn-info':true, 'disabled': fileToUpload == null}"
-                    [disabled]="fileToUpload == null"
+                    class="btn btn-info"
                     (click)="generarPago()"
                     >Pagar</button>
                 </div>

@@ -1,1 +1,110 @@
-<p>validacion-pagos works!</p>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                    <!-- Id Pago  Column -->
+                    <ng-container matColumnDef="idpago">
+                        <th mat-header-cell *matHeaderCellDef>Pago</th>
+                        <td mat-cell *matCellDef="let element"> {{element.IDPAGO}} </td>
+                    </ng-container>
+
+                    <!-- Id Factura  Column -->
+                    <ng-container matColumnDef="idfactura">
+                        <th mat-header-cell *matHeaderCellDef>Factura</th>
+                        <td mat-cell *matCellDef="let element"> {{element.IDFACTURA}} </td>
+                    </ng-container>
+
+                    
+                    <!-- Id Factura  Column -->
+                    <ng-container matColumnDef="fechamesfactura">
+                        <th mat-header-cell *matHeaderCellDef>Mes Factura</th>
+                        <td mat-cell *matCellDef="let element"> {{element.FECHAMESFACTURA | date: 'MM/yyyy'}} </td>
+                    </ng-container>
+
+                    
+                    <!-- Identificacion  Column -->
+                    <ng-container matColumnDef="identificacion">
+                        <th mat-header-cell *matHeaderCellDef>Identificacion</th>
+                        <td mat-cell *matCellDef="let element"> {{element.IDENTIFICACION}} </td>
+                    </ng-container>
+
+                    <!-- Identificacion  Column -->
+                    <ng-container matColumnDef="nombre">
+                        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+                        <td mat-cell *matCellDef="let element"> {{element.NOMBRE}} </td>
+                    </ng-container>
+
+
+                    <!-- Estado  Column -->
+                    <ng-container matColumnDef="estado">
+                        <th mat-header-cell *matHeaderCellDef>Estado</th>
+                        <td mat-cell *matCellDef="let element"> {{element.ESTADO}} </td>
+                    </ng-container>
+
+                    
+
+                    <!-- Estado  Column -->
+                    <ng-container matColumnDef="valadministracion">
+                        <th mat-header-cell *matHeaderCellDef>Val Admin</th>
+                        <td mat-cell *matCellDef="let element"> {{element.VALADMINISTRACION}} </td>
+                    </ng-container>
+
+                    
+                    <!-- Cuota Extra  Column -->
+                    <ng-container matColumnDef="cuotaextra">
+                        <th mat-header-cell *matHeaderCellDef>Cuota Extra</th>
+                        <td mat-cell *matCellDef="let element"> {{element.CUOTAEXTRA}} </td>
+                    </ng-container>
+
+
+
+                    <!-- Descuento  Column -->
+                    <ng-container matColumnDef="porcentajedescuento">
+                        <th mat-header-cell *matHeaderCellDef>Descuento</th>
+                        <td mat-cell *matCellDef="let element"> {{element.PORCENTAJEDESCUENTO}}%</td>
+                    </ng-container>
+
+                    
+                    <!-- Multa  Column -->
+                    <ng-container matColumnDef="porcentajerecargo">
+                        <th mat-header-cell *matHeaderCellDef>Multa</th>
+                        <td mat-cell *matCellDef="let element"> {{element.PORCENTAJERECARGO}}%</td>
+                    </ng-container>
+                                        
+                    <!-- Total  Column -->
+                    <ng-container matColumnDef="valortotal">
+                        <th mat-header-cell *matHeaderCellDef>Total</th>
+                        <td mat-cell *matCellDef="let element"> {{element.VALORTOTAL}} </td>
+                    </ng-container>
+
+                    
+                    <!-- validar Column -->
+                    <ng-container matColumnDef="descargar">
+                        <th mat-header-cell *matHeaderCellDef>
+                            Descargar
+                        </th>
+                        <td mat-cell *matCellDef="let element">
+                            <a href="javascript:void(0)" (click)="descargarArchivoUrl(element.URL_CONSIGNACION)" class="btn btn-link">Consignacion</a>
+                        </td>
+                    </ng-container>
+
+                    <!-- validar Column -->
+                    <ng-container matColumnDef="validar">
+                        <th mat-header-cell *matHeaderCellDef>
+                            Validar
+                        </th>
+                        <td mat-cell *matCellDef="let row; let idx = index">
+                            <button (click) = "validarPago(row, idx)"  class="btn btn-info">Validar</button>
+                        </td>
+                    </ng-container>
+
+                                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+            </div>
+        </div>
+</div>
