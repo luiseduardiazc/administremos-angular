@@ -58,7 +58,7 @@ export class PazysalvoComponent implements OnInit {
       'elementHandlers': handleElement
     });
 
-    doc.save('angular-demo.pdf');
+    doc.save('administremos_paz_y_salvo.pdf');
   }
 
 }

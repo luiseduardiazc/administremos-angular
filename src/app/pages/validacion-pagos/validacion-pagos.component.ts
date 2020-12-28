@@ -96,7 +96,7 @@ export class ValidacionPagosComponent implements OnInit {
   rechazarPago (pago: ValidarPago, idx: Number) {
     this.empleadoService.rechazarPago(pago).subscribe(
       resp => {
-        Swal.fire('Saved!', `${resp.op_mensaje}`, 'success')
+        Swal.fire('Procesado!', `${resp.op_mensaje}`, 'success')
         this.eliminarFilaDatasource(idx)
       },
       err => {
