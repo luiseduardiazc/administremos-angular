@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import jsPDF from 'jspdf'
+import { Usuario } from 'src/app/interfaces/usuario.interface';
 import { AuthService } from 'src/app/services/auth.service';
 import { ResidenteService } from 'src/app/services/residente.service';
 import Swal from 'sweetalert2';
@@ -11,7 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class PazysalvoComponent implements OnInit {
 
-  public user: any
+  public user: Usuario
   public currentDate: Date
   public pazysalvo: Boolean = false
 

@@ -6,6 +6,7 @@ import { LoginForm } from '../interfaces/login-form.interface';
 import { catchError, map, tap} from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import jwt_decode from "jwt-decode";
+import { Usuario } from '../interfaces/usuario.interface';
 
 const base_url = environment.base_url;
 
@@ -40,8 +41,9 @@ export class AuthService {
      localStorage.removeItem('token');
    }
 
-   getUserInfo() {
+   getUserInfo(): Usuario {
      const user = jwt_decode(localStorage.getItem('token'))
-     return user; 
+     const userInfo: Usuario = JSON.parse(JSON.stringify(user))
+     return userInfo; 
    }
 }

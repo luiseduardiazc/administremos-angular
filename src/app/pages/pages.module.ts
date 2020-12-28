@@ -20,7 +20,9 @@ import { MatPaginatorModule } from '@angular/material/paginator'
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { MatNativeDateModule } from '@angular/material/core'
-import { MatMomentDateModule } from '@angular/material-moment-adapter'
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import {MatSelectModule} from '@angular/material/select';
+import { PagosgeneralesComponent } from './pagosgenerales/pagosgenerales.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter'
     PagosComponent,
     PagoshistoricosComponent,
     PazysalvoComponent,
-    ValidacionPagosComponent
+    ValidacionPagosComponent,
+    PagosgeneralesComponent
   ],
   imports: [
             CommonModule,
@@ -45,7 +48,8 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter'
             MatDatepickerModule,
             MatFormFieldModule,
             MatNativeDateModule, 
-            MatMomentDateModule
+            MatMomentDateModule,
+            MatSelectModule,
           ],
   exports: [
     DashboardComponent,

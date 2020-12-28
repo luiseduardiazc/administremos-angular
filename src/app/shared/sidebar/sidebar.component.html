@@ -9,16 +9,16 @@
             <ul id="sidebarnav">
                 <li class="user-profile">
                     <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><img
-                            src="assets/images/users/profile.png" alt="user" /><span class="hide-menu">Luis Eduardo Diaz
-                        </span></a>
+                            src="assets/images/users/profile.png" alt="user" />
+                            <span class="hide-menu">{{user.nombre}}</span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a class="btn" style="color: white;" (click)="logout()">Salir</a></li>
                     </ul>
                 </li>
                 <li class="nav-devider"></li>
-                <li class="nav-small-cap">PERSONAL</li>
-                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
-                            class="mdi mdi-gauge"></i><span class="hide-menu">Residentes<span
+                <!-- Residentes-->
+                <li *ngIf="residenteModulo"> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false" ><i
+                            class="mdi mdi-gauge"></i><span class="hide-menu">RESIDENTES<span
                                 class="label label-rouded label-themecolor pull-right">3</span></span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a routerLink="/dashboard/pagos">Pagos</a></li>
@@ -26,14 +26,24 @@
                         <li><a routerLink="/dashboard/pazysalvo">Paz y salvo</a></li>
                     </ul>
                 </li>
-
-                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
-                            class="mdi mdi-gauge"></i><span class="hide-menu">Empleados<span
+                <!-- Empleados-->
+                <li *ngIf="empleadoteModulo"> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
+                            class="mdi mdi-gauge"></i><span class="hide-menu">EMPLEADOS<span
                                 class="label label-rouded label-themecolor pull-right">1</span></span></a>
                     <ul aria-expanded="false" class="collapse">
                         <li><a routerLink="/dashboard/validacion-pagos">Validacion de Pagos</a></li>
                     </ul>
                 </li>
+
+                <!-- Administradores -->
+                <li *ngIf="adminisModulo"> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
+                            class="mdi mdi-gauge"></i><span class="hide-menu">ADMINISTRADORES<span
+                                class="label label-rouded label-themecolor pull-right">1</span></span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a routerLink="/dashboard/pagos-generales">Pagos Generales</a></li>
+                    </ul>
+                </li>
+
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

@@ -9,6 +9,7 @@ import { PagosComponent } from './pagos/pagos.component';
 import { PagoshistoricosComponent } from './pagoshistoricos/pagoshistoricos.component';
 import { PazysalvoComponent } from './pazysalvo/pazysalvo.component';
 import { ValidacionPagosComponent } from './validacion-pagos/validacion-pagos.component';
+import { PagosgeneralesComponent } from './pagosgenerales/pagosgenerales.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
           {path: 'pagos', component: PagosComponent, data: {title: 'Pagos'}},
           {path: 'pagos-historicos', component:PagoshistoricosComponent, data: {title: 'Pagos Historicos'}},
           {path: 'pazysalvo', component: PazysalvoComponent, data: {title: 'Paz y Salvo'}},
-          {path: 'validacion-pagos', component: ValidacionPagosComponent, data: {title: 'Validacion de Pagos'}}
+          {path: 'validacion-pagos', component: ValidacionPagosComponent, data: {title: 'Validacion de Pagos'}},
+          {path: 'pagos-generales', component: PagosgeneralesComponent, data: {title: 'Pagos Generales'}},
         ]
       },
 ];

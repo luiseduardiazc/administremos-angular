@@ -1,0 +1,110 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Conjuntos</mat-label>
+                        <mat-select [(ngModel)]="selectedValue" name="conjunto" (selectionChange)="consultarPagos()">
+                          <mat-option *ngFor="let conjunto of conjuntos" [value]="conjunto.IDCONJUNTO">
+                            {{conjunto.NOMBRE}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </div>
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                    <!-- Id Pago  Column -->
+                    <ng-container matColumnDef="idpago">
+                        <th mat-header-cell *matHeaderCellDef>Pago</th>
+                        <td mat-cell *matCellDef="let element"> {{element.IDPAGO}}</td>
+                    </ng-container>
+
+                    <!-- Pago Estado  Column -->
+                    <ng-container matColumnDef="pagoestado">
+                        <th mat-header-cell *matHeaderCellDef>Estado</th>
+                        <td mat-cell *matCellDef="let element"> {{element.PAGOESTADO}}</td>
+                    </ng-container>
+
+
+                    <!-- Pago Estado  Column -->
+                    <ng-container matColumnDef="nombreconjunto">
+                        <th mat-header-cell *matHeaderCellDef>Conjunto</th>
+                        <td mat-cell *matCellDef="let element"> {{element.NOMBRECONJUNTO}}</td>
+                    </ng-container>
+
+                    <!-- Documento  Column -->
+                    <ng-container matColumnDef="identificacion">
+                        <th mat-header-cell *matHeaderCellDef>Documento</th>
+                        <td mat-cell *matCellDef="let element"> {{element.IDENTIFICACION}}</td>
+                    </ng-container>
+                    <!-- Nombre  Column -->
+                    <ng-container matColumnDef="nombre">
+                        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+                        <td mat-cell *matCellDef="let element"> {{element.NOMBRE}}</td>
+                    </ng-container>
+                    <!-- Apellido  Column -->
+                    <ng-container matColumnDef="apellido">
+                        <th mat-header-cell *matHeaderCellDef>Apellido</th>
+                        <td mat-cell *matCellDef="let element"> {{element.APELLIDO}}</td>
+                    </ng-container>
+                    <!-- id Factura  Column -->
+                    <ng-container matColumnDef="idfactura">
+                        <th mat-header-cell *matHeaderCellDef>Factura</th>
+                        <td mat-cell *matCellDef="let element"> {{element.IDFACTURA}}</td>
+                    </ng-container>
+                    <!-- Fecha Factura  Column -->
+                    <ng-container matColumnDef="fechfactura">
+                        <th mat-header-cell *matHeaderCellDef>Mes Factura</th>
+                        <td mat-cell *matCellDef="let element"> {{element.FECHFACTURA | date: 'MM/yyyy'}}</td>
+                    </ng-container>
+
+                    <!-- Fecha Pago  Column -->
+                    <ng-container matColumnDef="fechapago">
+                        <th mat-header-cell *matHeaderCellDef>Fecha Pago</th>
+                        <td mat-cell *matCellDef="let element"> {{element.FECHAPAGO | date: 'dd/MM/yyyy'}}</td>
+                    </ng-container>
+
+
+                    <!-- Valoradmin  Column -->
+                    <ng-container matColumnDef="valoradmin">
+                        <th mat-header-cell *matHeaderCellDef>Val Admin</th>
+                        <td mat-cell *matCellDef="let element"> {{element.VALORADMIN}}</td>
+                    </ng-container>
+
+
+                    <!-- Cuota Extra  Column -->
+                    <ng-container matColumnDef="cuotaextra">
+                        <th mat-header-cell *matHeaderCellDef>Cuota Extra</th>
+                        <td mat-cell *matCellDef="let element"> {{element.CUOTAEXTRA}}</td>
+                    </ng-container>
+
+
+                    <!-- Descuento  Column -->
+                    <ng-container matColumnDef="porcentajedescuento">
+                        <th mat-header-cell *matHeaderCellDef>Descuento</th>
+                        <td mat-cell *matCellDef="let element"> {{element.PORCENTAJEDESCUENTO}}%</td>
+                    </ng-container>
+
+
+                    <!-- Recargo  Column -->
+                    <ng-container matColumnDef="porcentajerecargo">
+                        <th mat-header-cell *matHeaderCellDef>Recargo</th>
+                        <td mat-cell *matCellDef="let element"> {{element.PORCENTAJERECARGO}}%</td>
+                    </ng-container>
+
+
+                    <!-- Recargo  Column -->
+                    <ng-container matColumnDef="valortotal">
+                        <th mat-header-cell *matHeaderCellDef>Total</th>
+                        <td mat-cell *matCellDef="let element"> {{element.VALORTOTAL}}</td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+            </div>
+        </div>
+    </div>
+</div>

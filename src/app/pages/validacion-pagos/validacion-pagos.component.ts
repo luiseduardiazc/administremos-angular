@@ -66,7 +66,7 @@ export class ValidacionPagosComponent implements OnInit {
     pago.idOrdenTrab = Number(row.IDORDENTRAB)
 
     Swal.fire({
-      title: 'Do you want to save the changes?',
+      title: 'Esta seguro de guardar los cambios ?',
       showDenyButton: true,
       showCancelButton: true,
       confirmButtonText: `Aprobar Pago`,
@@ -83,7 +83,7 @@ export class ValidacionPagosComponent implements OnInit {
   aprobarPago (pago: ValidarPago, idx: Number) {
     this.empleadoService.aprobarPago(pago).subscribe(
       resp => {
-        Swal.fire('Saved!', `${resp.op_mensaje}`, 'success')
+        Swal.fire('Procesado!', `${resp.op_mensaje}`, 'success')
         this.eliminarFilaDatasource(idx)
       },
       err => {
